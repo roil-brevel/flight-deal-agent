@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flight Deal Agent</title>
+<style>
+  :root{
+    --bg:#0b1020; --panel:#141b30; --panel2:#1b2440; --line:#26314f;
+    --txt:#e8ecf6; --muted:#8b97b8; --accent:#4da3ff; --good:#2ecc71;
+    --warn:#f4b740; --strong:#ff5d73; --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 system-ui,Segoe UI,Roboto,sans-serif;
+    background:var(--bg);color:var(--txt)}
+  a{color:var(--accent);text-decoration:none}
+  header{padding:20px 24px;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  header h1{font-size:19px;margin:0}
+  .pax{color:var(--muted);font-size:13px}
+  .updated{margin-left:auto;color:var(--muted);font-size:13px}
+  .wrap{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:20px 24px;
+    max-width:1280px;margin:0 auto}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr}}
+  .panel{background:var(--panel);border:1px solid var(--line);
+    border-radius:var(--radius);padding:16px 18px;margin-bottom:20px}
+  .panel h2{font-size:14px;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 12px}
+  .deal{background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+    padding:12px 14px;margin-bottom:10px;border-left:3px solid var(--strong)}
+  .deal .route{font-weight:600;font-size:16px}
+  .deal .price{float:right;font-weight:700;font-size:17px;color:var(--good)}
+  .deal .meta,.deal .why{color:var(--muted);font-size:13px}
+  .deal .why{margin-top:4px;color:var(--warn)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:500;font-size:12px;text-transform:uppercase}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .tag{font-size:11px;padding:2px 7px;border-radius:20px;background:var(--panel2);
+    color:var(--muted);border:1px solid var(--line)}
+  .tag.family{color:var(--good);border-color:#2f5d43}
+  .tag.adult{color:var(--accent)}
+  .empty{color:var(--muted);font-style:italic;padding:8px 0}
+  /* chat */
+  #chat{display:flex;flex-direction:column;height:520px}
+  #log{flex:1;overflow-y:auto;padding-right:4px}
+  .msg{margin-bottom:10px;max-width:90%}
+  .msg.you{margin-left:auto;text-align:right}
+  .bubble{display:inline-block;padding:8px 12px;border-radius:12px;
+    background:var(--panel2);border:1px solid var(--line);text-align:left}
+  .msg.you .bubble{background:#20406e;border-color:#2c5488}
+  .composer{display:flex;gap:8px;margin-top:10px}
+  .composer input{flex:1;padding:10px 12px;border-radius:10px;
+    border:1px solid var(--line);background:var(--bg);color:var(--txt)}
+  .composer button{padding:10px 16px;border:0;border-radius:10px;
+    background:var(--accent);color:#04122b;font-weight:600;cursor:pointer}
+  .hint{color:var(--muted);font-size:12px;margin-top:6px}
+  svg.spark{vertical-align:middle}
+</style>
+</head>
+<body>
+<header>
+  <h1>✈️ Flight Deal Agent</h1>
+  <span class="pax" id="pax"></span>
+  <span class="updated" id="updated"></span>
+</header>
+
+<div class="wrap">
+  <div class="col-main">
+    <div class="panel">
+      <h2>Deals right now</h2>
+      <div id="deals"></div>
+    </div>
+    <div id="goals"></div>
+  </div>
+
+  <div class="col-side">
+    <div class="panel" id="chat">
+      <h2>Ask the agent</h2>
+      <div id="log"></div>
+      <div class="composer">
+        <input id="q" placeholder="e.g. cheapest to Bali? / deals now" autocomplete="off">
+        <button id="send">Ask</button>
+      </div>
+      <div class="hint">Try: “deals now”, “bali”, “cheapest”, “where can I go in august”.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+let DATA = null;
+
+function fmt(cur, n){ return (cur==='USD'?'$':cur+' ')+Math.round(n).toLocaleString(); }
+function basisTag(b){
+  return b==='family_total'
+    ? '<span class="tag family">family total</span>'
+    : '<span class="tag adult">per adult</span>';
+}
+function sparkSVG(points){
+  if(!points||points.length<2) return '';
+  const w=90,h=24,ps=points.map(p=>p.p);
+  const min=Math.min(...ps),max=Math.max(...ps),rng=(max-min)||1;
+  const step=w/(points.length-1);
+  const d=points.map((p,i)=>`${i?'L':'M'}${(i*step).toFixed(1)},${(h-((p.p-min)/rng)*h).toFixed(1)}`).join(' ');
+  const last=ps[ps.length-1], up=last>ps[0];
+  return `<svg class="spark" width="${w}" height="${h}"><path d="${d}" fill="none" stroke="${up?'#ff5d73':'#2ecc71'}" stroke-width="1.5"/></svg>`;
+}
+
+function renderDeals(){
+  const el=document.getElementById('deals');
+  const d=DATA.deals_now||[];
+  if(!d.length){ el.innerHTML='<div class="empty">No strong deals right now — the agent keeps watching.</div>'; return; }
+  el.innerHTML=d.map(x=>`
+    <div class="deal">
+      <span class="price">${fmt(x.currency,x.price)}</span>
+      <div class="route">${x.origin} → ${x.destination} ${basisTag(x.basis)}</div>
+      <div class="meta">${x.depart_date||''}${x.return_date?' → '+x.return_date:''}
+        · ${x.airline||'—'} · ${x.transfers??'?'} stops</div>
+      ${x.reasons&&x.reasons.length?`<div class="why">${x.reasons.join(' · ')}</div>`:''}
+      <div><a href="${x.link}" target="_blank" rel="noopener">Open search ↗</a></div>
+    </div>`).join('');
+}
+
+function renderGoals(){
+  const box=document.getElementById('goals');
+  box.innerHTML=(DATA.goals||[]).map(g=>{
+    const rows=(g.routes||[]).map(r=>`
+      <tr>
+        <td>${r.origin}→${r.destination}</td>
+        <td>${basisTag(r.basis)}</td>
+        <td class="num">${fmt(r.currency,r.price)}</td>
+        <td class="num">${r.lowest_seen?fmt(r.currency,r.lowest_seen):'—'}</td>
+        <td>${sparkSVG(r.sparkline)}</td>
+        <td>${r.depart_date||''}${r.return_date?'<br>'+r.return_date:''}</td>
+        <td><a href="${r.link}" target="_blank" rel="noopener">↗</a></td>
+      </tr>`).join('');
+    return `<div class="panel">
+      <h2>${g.label}</h2>
+      ${rows?`<table><thead><tr>
+        <th>Route</th><th>Basis</th><th class="num">Now</th>
+        <th class="num">Lowest seen</th><th>Trend</th><th>Dates</th><th></th>
+      </tr></thead><tbody>${rows}</tbody></table>`
+      :'<div class="empty">No data yet — first run will populate this.</div>'}
+    </div>`;
+  }).join('');
+}
+
+/* ── Local query engine: answers from the loaded data (no extra API key). ── */
+function answer(qRaw){
+  const q=qRaw.toLowerCase().trim();
+  const allRoutes=(DATA.goals||[]).flatMap(g=>g.routes.map(r=>({...r,goal:g.label})));
+  if(!allRoutes.length) return "I don't have any price data yet. The first collector run will fill this in.";
+
+  if(/deal|strong|good/.test(q)){
+    const d=DATA.deals_now||[];
+    if(!d.length) return "No strong deals at the moment. I flag a fare when it's well below its recent norm.";
+    return "Strong right now:\n"+d.map(x=>`• ${x.origin}→${x.destination} ${fmt(x.currency,x.price)} (${x.reasons.join('; ')||'below norm'})`).join('\n');
+  }
+  if(/august|anywhere|where.*go/.test(q)){
+    const g=(DATA.goals||[]).find(g=>/august|anywhere/i.test(g.label));
+    if(!g||!g.routes.length) return "No August destinations logged yet.";
+    const top=[...g.routes].sort((a,b)=>a.price-b.price).slice(0,6);
+    return "Cheapest destinations for late August:\n"+top.map(r=>`• ${r.destination} — ${fmt(r.currency,r.price)} ${r.basis==='family_total'?'(family)':'(per adult)'}`).join('\n');
+  }
+  // destination name / code lookup (e.g. "bali", "dps")
+  const m=allRoutes.filter(r=>q.includes(r.destination.toLowerCase()) ||
+     (q.includes('bali')&&r.destination==='DPS'));
+  if(m.length){
+    const r=m.sort((a,b)=>a.price-b.price)[0];
+    return `${r.origin}→${r.destination}: now ${fmt(r.currency,r.price)} ${r.basis==='family_total'?'(family total)':'(per adult)'}`+
+      (r.lowest_seen?`, lowest seen ${fmt(r.currency,r.lowest_seen)}`:'')+
+      (r.depart_date?`.\nBest dates: ${r.depart_date}${r.return_date?' → '+r.return_date:''}.`:'.');
+  }
+  if(/cheap/.test(q)){
+    const r=[...allRoutes].sort((a,b)=>a.price-b.price)[0];
+    return `Cheapest tracked right now: ${r.origin}→${r.destination} at ${fmt(r.currency,r.price)}.`;
+  }
+  return "I can tell you about deals now, the August options, or a specific destination (e.g. “bali”). What are you after?";
+}
+
+function pushMsg(who,text){
+  const log=document.getElementById('log');
+  const div=document.createElement('div');
+  div.className='msg '+who;
+  div.innerHTML=`<span class="bubble">${text.replace(/\n/g,'<br>')}</span>`;
+  log.appendChild(div); log.scrollTop=log.scrollHeight;
+}
+function ask(){
+  const inp=document.getElementById('q');
+  const t=inp.value.trim(); if(!t) return;
+  pushMsg('you',t); inp.value='';
+  setTimeout(()=>pushMsg('bot',answer(t)),120);
+}
+
+async function load(){
+  try{
+    DATA=await (await fetch('data.json?_='+Date.now())).json();
+  }catch(e){
+    document.getElementById('deals').innerHTML='<div class="empty">No data.json yet — run the collector once.</div>';
+    return;
+  }
+  const p=DATA.passengers||{};
+  document.getElementById('pax').textContent=
+    `${p.adults||0} adult(s)`+((p.infants_on_lap||0)?` + ${p.infants_on_lap} lap infant`:'')+` · ${DATA.currency}`;
+  document.getElementById('updated').textContent=
+    DATA.generated_at?('updated '+DATA.generated_at.replace('T',' ').replace('Z',' UTC')):'';
+  renderDeals(); renderGoals();
+  pushMsg('bot','Hi! I track your flights and flag deals below their recent norm. Ask me “deals now”, “bali”, or “where can I go in august”.');
+}
+document.getElementById('send').addEventListener('click',ask);
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')ask();});
+load();
+</script>
+</body>
+</html>

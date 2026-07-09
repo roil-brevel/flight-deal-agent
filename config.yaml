@@ -1,0 +1,63 @@
+# ── Flight Deal Agent · configuration ─────────────────────────────────
+# Everything the agent tracks lives here. Edit this file to change routes,
+# dates, passengers, or what counts as a "deal". No code changes needed.
+
+currency: USD
+
+passengers:
+  adults: 2
+  children: 0          # ages 2–11 in their own seat
+  infants_on_lap: 1    # under 2, on an adult's lap (your 5-month-old)
+  infants_in_seat: 0
+
+# How strong a price has to be before it counts as a "deal" worth emailing.
+deals:
+  # A fare is a STRONG deal (triggers email) if EITHER is true:
+  strong_pct_below_median: 0.20     # 20%+ below its own rolling median, OR
+  strong_is_lowest_in_days: 45      # it's the lowest price seen in this many days
+  # A fare is a WATCH deal (dashboard only, no email):
+  watch_pct_below_median: 0.10
+  min_observations: 4               # need at least this much history before judging
+
+# ── Watchlist ─────────────────────────────────────────────────────────
+# Each goal is polled every run. "discover" = cheapest-anywhere from origin.
+# "route" = a specific origin→destination.
+goals:
+
+  - id: anywhere_august
+    label: "Anywhere cheap · late August"
+    type: discover              # uses Travelpayouts city-directions
+    origin: TLV
+    trip: round               # round | oneway
+    depart_from: 2026-08-22
+    depart_to:   2026-08-31
+    min_nights: 5
+    max_nights: 7
+    max_results: 25             # how many destinations to keep per run
+    # Optional: only surface destinations at/under this family total (USD).
+    budget_family_total: 1800
+    # Verify the top N discovered destinations live via SerpAPI (costs quota).
+    verify_top_n: 3
+
+  - id: bali_december
+    label: "Bali (DPS) · Dec 8–15 departure, 14–21 nights"
+    type: route
+    origin: TLV
+    destination: DPS
+    trip: round
+    depart_from: 2026-12-08
+    depart_to:   2026-12-15
+    min_nights: 14
+    max_nights: 21
+    # Bali is far-future + thin in cache, so always confirm live via SerpAPI.
+    verify_live: true
+
+# ── Sources ───────────────────────────────────────────────────────────
+sources:
+  travelpayouts:
+    enabled: true
+    # token comes from env var TRAVELPAYOUTS_TOKEN (GitHub Secret)
+  serpapi:
+    enabled: true
+    # key comes from env var SERPAPI_KEY (GitHub Secret)
+    monthly_budget: 250         # free-tier searches/month; agent self-limits
