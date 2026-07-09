@@ -8,7 +8,7 @@ from pathlib import Path
 from . import store
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "dashboard" / "data.json"
+OUT = ROOT / "docs" / "data.json"
 
 
 def _ddmm(iso: str | None) -> str:
