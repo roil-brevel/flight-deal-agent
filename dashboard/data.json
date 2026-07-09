@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-09T09:56:43Z",
+  "currency": "USD",
+  "passengers": {
+    "adults": 2,
+    "children": 0,
+    "infants_on_lap": 1,
+    "infants_in_seat": 0
+  },
+  "n_strong": 0,
+  "n_watch": 0,
+  "deals_now": [],
+  "goals": [
+    {
+      "id": "anywhere_august",
+      "label": "Anywhere cheap · late August",
+      "type": "discover",
+      "routes": []
+    },
+    {
+      "id": "bali_december",
+      "label": "Bali (DPS) · Dec 8–15 departure, 14–21 nights",
+      "type": "route",
+      "routes": []
+    }
+  ]
+}
