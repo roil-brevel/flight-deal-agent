@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T17:58:43Z",
+  "generated_at": "2026-07-10T09:34:42Z",
   "currency": "USD",
   "passengers": {
     "adults": 2,
@@ -18,18 +18,52 @@
       "routes": [
         {
           "origin": "TLV",
+          "destination": "MIL",
+          "source": "travelpayouts",
+          "basis": "per_adult",
+          "price": 143.0,
+          "currency": "USD",
+          "airline": "W4",
+          "transfers": 0,
+          "depart_date": "2026-10-03",
+          "return_date": "2026-10-17",
+          "lowest_seen": 143.0,
+          "median": 143.0,
+          "n_obs": 4,
+          "sparkline": [
+            {
+              "t": "2026-07-09",
+              "p": 143.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 143.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 143.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 143.0
+            }
+          ],
+          "link": "https://www.aviasales.com/search/TLV0310MIL17102"
+        },
+        {
+          "origin": "TLV",
           "destination": "LCA",
           "source": "travelpayouts",
           "basis": "per_adult",
-          "price": 116.0,
+          "price": 145.0,
           "currency": "USD",
-          "airline": "LY",
+          "airline": "W6",
           "transfers": 0,
-          "depart_date": "2026-09-01",
-          "return_date": "2026-09-09",
+          "depart_date": "2026-07-27",
+          "return_date": "2026-07-29",
           "lowest_seen": 103.0,
-          "median": 103.0,
-          "n_obs": 3,
+          "median": 116.0,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -42,69 +76,13 @@
             {
               "t": "2026-07-09",
               "p": 116.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 145.0
             }
           ],
-          "link": "https://www.aviasales.com/search/TLV0109LCA09092"
-        },
-        {
-          "origin": "TLV",
-          "destination": "MIL",
-          "source": "travelpayouts",
-          "basis": "per_adult",
-          "price": 143.0,
-          "currency": "USD",
-          "airline": "W4",
-          "transfers": 0,
-          "depart_date": "2026-10-03",
-          "return_date": "2026-10-17",
-          "lowest_seen": 143.0,
-          "median": 143.0,
-          "n_obs": 3,
-          "sparkline": [
-            {
-              "t": "2026-07-09",
-              "p": 143.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 143.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 143.0
-            }
-          ],
-          "link": "https://www.aviasales.com/search/TLV0310MIL17102"
-        },
-        {
-          "origin": "TLV",
-          "destination": "ROM",
-          "source": "travelpayouts",
-          "basis": "per_adult",
-          "price": 149.0,
-          "currency": "USD",
-          "airline": "W4",
-          "transfers": 0,
-          "depart_date": "2026-09-12",
-          "return_date": "2026-09-13",
-          "lowest_seen": 138.0,
-          "median": 138.0,
-          "n_obs": 3,
-          "sparkline": [
-            {
-              "t": "2026-07-09",
-              "p": 138.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 138.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 149.0
-            }
-          ],
-          "link": "https://www.aviasales.com/search/TLV1209ROM13092"
+          "link": "https://www.aviasales.com/search/TLV2707LCA29072"
         },
         {
           "origin": "TLV",
@@ -119,7 +97,7 @@
           "return_date": "2026-09-05",
           "lowest_seen": 166.0,
           "median": 166.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -131,6 +109,10 @@
             },
             {
               "t": "2026-07-09",
+              "p": 166.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 166.0
             }
           ],
@@ -149,7 +131,7 @@
           "return_date": "2026-07-24",
           "lowest_seen": 170.0,
           "median": 171.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -162,39 +144,81 @@
             {
               "t": "2026-07-09",
               "p": 170.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 170.0
             }
           ],
           "link": "https://www.aviasales.com/search/TLV2107ATH24072"
         },
         {
           "origin": "TLV",
-          "destination": "WAW",
+          "destination": "TBS",
           "source": "travelpayouts",
           "basis": "per_adult",
-          "price": 227.0,
+          "price": 209.0,
           "currency": "USD",
-          "airline": "W6",
-          "transfers": 1,
-          "depart_date": "2026-09-12",
-          "return_date": "2026-09-24",
-          "lowest_seen": 227.0,
-          "median": 227.0,
-          "n_obs": 3,
+          "airline": "IZ",
+          "transfers": 0,
+          "depart_date": "2026-07-20",
+          "return_date": "2026-08-04",
+          "lowest_seen": 209.0,
+          "median": 263.0,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
-              "p": 227.0
+              "p": 263.0
             },
             {
               "t": "2026-07-09",
-              "p": 227.0
+              "p": 263.0
             },
             {
               "t": "2026-07-09",
-              "p": 227.0
+              "p": 263.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 209.0
             }
           ],
-          "link": "https://www.aviasales.com/search/TLV1209WAW24092"
+          "link": "https://www.aviasales.com/search/TLV2007TBS04082"
+        },
+        {
+          "origin": "TLV",
+          "destination": "EVN",
+          "source": "travelpayouts",
+          "basis": "per_adult",
+          "price": 210.0,
+          "currency": "USD",
+          "airline": "IZ",
+          "transfers": 1,
+          "depart_date": "2026-09-15",
+          "return_date": "2026-10-06",
+          "lowest_seen": 210.0,
+          "median": 245.0,
+          "n_obs": 4,
+          "sparkline": [
+            {
+              "t": "2026-07-09",
+              "p": 245.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 245.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 281.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 210.0
+            }
+          ],
+          "link": "https://www.aviasales.com/search/TLV1509EVN06102"
         },
         {
           "origin": "TLV",
@@ -209,7 +233,7 @@
           "return_date": "2026-09-02",
           "lowest_seen": 236.0,
           "median": 236.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -221,6 +245,10 @@
             },
             {
               "t": "2026-07-09",
+              "p": 236.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 236.0
             }
           ],
@@ -239,7 +267,7 @@
           "return_date": "2026-10-07",
           "lowest_seen": 238.0,
           "median": 238.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -252,9 +280,81 @@
             {
               "t": "2026-07-09",
               "p": 238.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 238.0
             }
           ],
           "link": "https://www.aviasales.com/search/TLV0110LON07102"
+        },
+        {
+          "origin": "TLV",
+          "destination": "ROM",
+          "source": "travelpayouts",
+          "basis": "per_adult",
+          "price": 240.0,
+          "currency": "USD",
+          "airline": "W4",
+          "transfers": 0,
+          "depart_date": "2026-08-31",
+          "return_date": "2026-09-04",
+          "lowest_seen": 138.0,
+          "median": 149.0,
+          "n_obs": 4,
+          "sparkline": [
+            {
+              "t": "2026-07-09",
+              "p": 138.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 138.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 149.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 240.0
+            }
+          ],
+          "link": "https://www.aviasales.com/search/TLV3108ROM04092"
+        },
+        {
+          "origin": "TLV",
+          "destination": "PRG",
+          "source": "travelpayouts",
+          "basis": "per_adult",
+          "price": 244.0,
+          "currency": "USD",
+          "airline": "W4",
+          "transfers": 1,
+          "depart_date": "2026-09-06",
+          "return_date": "2026-09-11",
+          "lowest_seen": 244.0,
+          "median": 327.0,
+          "n_obs": 4,
+          "sparkline": [
+            {
+              "t": "2026-07-09",
+              "p": 327.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 327.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 327.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 244.0
+            }
+          ],
+          "link": "https://www.aviasales.com/search/TLV0609PRG11092"
         },
         {
           "origin": "TLV",
@@ -269,7 +369,7 @@
           "return_date": "2026-11-10",
           "lowest_seen": 248.0,
           "median": 248.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -281,6 +381,10 @@
             },
             {
               "t": "2026-07-09",
+              "p": 248.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 248.0
             }
           ],
@@ -288,138 +392,52 @@
         },
         {
           "origin": "TLV",
-          "destination": "TBS",
+          "destination": "WAW",
           "source": "travelpayouts",
           "basis": "per_adult",
-          "price": 263.0,
+          "price": 253.0,
           "currency": "USD",
-          "airline": "6H",
-          "transfers": 0,
-          "depart_date": "2026-10-01",
-          "return_date": "2026-10-21",
-          "lowest_seen": 263.0,
-          "median": 263.0,
-          "n_obs": 3,
+          "airline": "W4",
+          "transfers": 2,
+          "depart_date": "2026-10-04",
+          "return_date": "2026-10-18",
+          "lowest_seen": 227.0,
+          "median": 227.0,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
-              "p": 263.0
+              "p": 227.0
             },
             {
               "t": "2026-07-09",
-              "p": 263.0
+              "p": 227.0
             },
             {
               "t": "2026-07-09",
-              "p": 263.0
+              "p": 227.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 253.0
             }
           ],
-          "link": "https://www.aviasales.com/search/TLV0110TBS21102"
-        },
-        {
-          "origin": "TLV",
-          "destination": "EVN",
-          "source": "travelpayouts",
-          "basis": "per_adult",
-          "price": 281.0,
-          "currency": "USD",
-          "airline": "C3",
-          "transfers": 1,
-          "depart_date": "2026-07-12",
-          "return_date": "2026-07-14",
-          "lowest_seen": 245.0,
-          "median": 245.0,
-          "n_obs": 3,
-          "sparkline": [
-            {
-              "t": "2026-07-09",
-              "p": 245.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 245.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 281.0
-            }
-          ],
-          "link": "https://www.aviasales.com/search/TLV1207EVN14072"
-        },
-        {
-          "origin": "TLV",
-          "destination": "BUH",
-          "source": "travelpayouts",
-          "basis": "per_adult",
-          "price": 313.0,
-          "currency": "USD",
-          "airline": "W6",
-          "transfers": 1,
-          "depart_date": "2026-07-10",
-          "return_date": "2026-07-17",
-          "lowest_seen": 313.0,
-          "median": 313.0,
-          "n_obs": 3,
-          "sparkline": [
-            {
-              "t": "2026-07-09",
-              "p": 313.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 313.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 313.0
-            }
-          ],
-          "link": "https://www.aviasales.com/search/TLV1007BUH17072"
-        },
-        {
-          "origin": "TLV",
-          "destination": "BAK",
-          "source": "travelpayouts",
-          "basis": "per_adult",
-          "price": 316.0,
-          "currency": "USD",
-          "airline": "IZ",
-          "transfers": 1,
-          "depart_date": "2026-07-20",
-          "return_date": "2026-07-30",
-          "lowest_seen": 316.0,
-          "median": 316.0,
-          "n_obs": 3,
-          "sparkline": [
-            {
-              "t": "2026-07-09",
-              "p": 316.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 316.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 316.0
-            }
-          ],
-          "link": "https://www.aviasales.com/search/TLV2007BAK30072"
+          "link": "https://www.aviasales.com/search/TLV0410WAW18102"
         },
         {
           "origin": "TLV",
           "destination": "BUS",
           "source": "travelpayouts",
           "basis": "per_adult",
-          "price": 320.0,
+          "price": 269.0,
           "currency": "USD",
           "airline": "LY",
           "transfers": 0,
-          "depart_date": "2026-09-07",
-          "return_date": "2026-09-16",
-          "lowest_seen": 320.0,
+          "depart_date": "2026-10-08",
+          "return_date": "2026-10-22",
+          "lowest_seen": 269.0,
           "median": 320.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -432,69 +450,13 @@
             {
               "t": "2026-07-09",
               "p": 320.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 269.0
             }
           ],
-          "link": "https://www.aviasales.com/search/TLV0709BUS16092"
-        },
-        {
-          "origin": "TLV",
-          "destination": "PRG",
-          "source": "travelpayouts",
-          "basis": "per_adult",
-          "price": 327.0,
-          "currency": "USD",
-          "airline": "W4",
-          "transfers": 1,
-          "depart_date": "2026-09-11",
-          "return_date": "2026-09-13",
-          "lowest_seen": 327.0,
-          "median": 327.0,
-          "n_obs": 3,
-          "sparkline": [
-            {
-              "t": "2026-07-09",
-              "p": 327.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 327.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 327.0
-            }
-          ],
-          "link": "https://www.aviasales.com/search/TLV1109PRG13092"
-        },
-        {
-          "origin": "TLV",
-          "destination": "PAR",
-          "source": "travelpayouts",
-          "basis": "per_adult",
-          "price": 336.0,
-          "currency": "USD",
-          "airline": "W4",
-          "transfers": 1,
-          "depart_date": "2026-10-01",
-          "return_date": "2026-10-08",
-          "lowest_seen": 336.0,
-          "median": 336.0,
-          "n_obs": 3,
-          "sparkline": [
-            {
-              "t": "2026-07-09",
-              "p": 336.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 336.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 336.0
-            }
-          ],
-          "link": "https://www.aviasales.com/search/TLV0110PAR08102"
+          "link": "https://www.aviasales.com/search/TLV0810BUS22102"
         },
         {
           "origin": "TLV",
@@ -509,7 +471,7 @@
           "return_date": "2026-10-12",
           "lowest_seen": 341.0,
           "median": 341.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -521,6 +483,10 @@
             },
             {
               "t": "2026-07-09",
+              "p": 341.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 341.0
             }
           ],
@@ -528,48 +494,120 @@
         },
         {
           "origin": "TLV",
-          "destination": "MOW",
+          "destination": "BUH",
           "source": "travelpayouts",
           "basis": "per_adult",
-          "price": 472.0,
+          "price": 365.0,
           "currency": "USD",
-          "airline": "WZ",
+          "airline": "W4",
           "transfers": 0,
-          "depart_date": "2026-09-22",
-          "return_date": "2026-11-04",
-          "lowest_seen": 472.0,
-          "median": 472.0,
-          "n_obs": 3,
+          "depart_date": "2026-08-12",
+          "return_date": "2026-08-19",
+          "lowest_seen": 313.0,
+          "median": 313.0,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
-              "p": 472.0
+              "p": 313.0
             },
             {
               "t": "2026-07-09",
-              "p": 472.0
+              "p": 313.0
             },
             {
               "t": "2026-07-09",
-              "p": 472.0
+              "p": 313.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 365.0
             }
           ],
-          "link": "https://www.aviasales.com/search/TLV2209MOW04112"
+          "link": "https://www.aviasales.com/search/TLV1208BUH19082"
+        },
+        {
+          "origin": "TLV",
+          "destination": "PAR",
+          "source": "travelpayouts",
+          "basis": "per_adult",
+          "price": 365.0,
+          "currency": "USD",
+          "airline": "W4",
+          "transfers": 1,
+          "depart_date": "2026-09-17",
+          "return_date": "2026-10-06",
+          "lowest_seen": 336.0,
+          "median": 336.0,
+          "n_obs": 4,
+          "sparkline": [
+            {
+              "t": "2026-07-09",
+              "p": 336.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 336.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 336.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 365.0
+            }
+          ],
+          "link": "https://www.aviasales.com/search/TLV1709PAR06102"
+        },
+        {
+          "origin": "TLV",
+          "destination": "MRV",
+          "source": "travelpayouts",
+          "basis": "per_adult",
+          "price": 388.0,
+          "currency": "USD",
+          "airline": "WZ",
+          "transfers": 1,
+          "depart_date": "2026-09-14",
+          "return_date": "2026-10-08",
+          "lowest_seen": 388.0,
+          "median": 571.0,
+          "n_obs": 4,
+          "sparkline": [
+            {
+              "t": "2026-07-09",
+              "p": 571.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 571.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 571.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 388.0
+            }
+          ],
+          "link": "https://www.aviasales.com/search/TLV1409MRV08102"
         },
         {
           "origin": "TLV",
           "destination": "KRR",
           "source": "travelpayouts",
           "basis": "per_adult",
-          "price": 479.0,
+          "price": 399.0,
           "currency": "USD",
-          "airline": "W6",
-          "transfers": 2,
-          "depart_date": "2026-09-07",
-          "return_date": "2026-09-24",
-          "lowest_seen": 460.0,
+          "airline": "A4",
+          "transfers": 0,
+          "depart_date": "2026-09-14",
+          "return_date": "2026-09-28",
+          "lowest_seen": 399.0,
           "median": 460.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -582,9 +620,81 @@
             {
               "t": "2026-07-09",
               "p": 479.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 399.0
             }
           ],
-          "link": "https://www.aviasales.com/search/TLV0709KRR24092"
+          "link": "https://www.aviasales.com/search/TLV1409KRR28092"
+        },
+        {
+          "origin": "TLV",
+          "destination": "MOW",
+          "source": "travelpayouts",
+          "basis": "per_adult",
+          "price": 474.0,
+          "currency": "USD",
+          "airline": "WZ",
+          "transfers": 0,
+          "depart_date": "2026-09-01",
+          "return_date": "2026-10-30",
+          "lowest_seen": 472.0,
+          "median": 472.0,
+          "n_obs": 4,
+          "sparkline": [
+            {
+              "t": "2026-07-09",
+              "p": 472.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 472.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 472.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 474.0
+            }
+          ],
+          "link": "https://www.aviasales.com/search/TLV0109MOW30102"
+        },
+        {
+          "origin": "TLV",
+          "destination": "BAK",
+          "source": "travelpayouts",
+          "basis": "per_adult",
+          "price": 481.0,
+          "currency": "USD",
+          "airline": "J2",
+          "transfers": 0,
+          "depart_date": "2026-09-30",
+          "return_date": "2026-10-07",
+          "lowest_seen": 316.0,
+          "median": 316.0,
+          "n_obs": 4,
+          "sparkline": [
+            {
+              "t": "2026-07-09",
+              "p": 316.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 316.0
+            },
+            {
+              "t": "2026-07-09",
+              "p": 316.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 481.0
+            }
+          ],
+          "link": "https://www.aviasales.com/search/TLV3009BAK07102"
         },
         {
           "origin": "TLV",
@@ -599,7 +709,7 @@
           "return_date": "2026-11-01",
           "lowest_seen": 485.0,
           "median": 485.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -611,6 +721,10 @@
             },
             {
               "t": "2026-07-09",
+              "p": 485.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 485.0
             }
           ],
@@ -618,48 +732,18 @@
         },
         {
           "origin": "TLV",
-          "destination": "MRV",
-          "source": "travelpayouts",
-          "basis": "per_adult",
-          "price": 571.0,
-          "currency": "USD",
-          "airline": "6H",
-          "transfers": 3,
-          "depart_date": "2026-07-09",
-          "return_date": "2026-07-19",
-          "lowest_seen": 571.0,
-          "median": 571.0,
-          "n_obs": 3,
-          "sparkline": [
-            {
-              "t": "2026-07-09",
-              "p": 571.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 571.0
-            },
-            {
-              "t": "2026-07-09",
-              "p": 571.0
-            }
-          ],
-          "link": "https://www.aviasales.com/search/TLV0907MRV19072"
-        },
-        {
-          "origin": "TLV",
           "destination": "BUD",
           "source": "serpapi",
           "basis": "family_total",
-          "price": 577.0,
+          "price": 554.0,
           "currency": "USD",
           "airline": "Wizz Air",
           "transfers": 0,
           "depart_date": "2026-08-30",
           "return_date": "2026-09-05",
-          "lowest_seen": 576.0,
+          "lowest_seen": 554.0,
           "median": 576.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -672,6 +756,10 @@
             {
               "t": "2026-07-09",
               "p": 577.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 554.0
             }
           ],
           "link": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoeEgoyMDI2LTA4LTMwagcIARIDVExWcgcIARIDQlVEGh4SCjIwMjYtMDktMDVqBwgBEgNCVURyBwgBEgNUTFZAAUABQANIAXABmAEB&tfu=EgIIAQ"
@@ -689,7 +777,7 @@
           "return_date": "2026-10-13",
           "lowest_seen": 589.0,
           "median": 589.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -701,6 +789,10 @@
             },
             {
               "t": "2026-07-09",
+              "p": 589.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 589.0
             }
           ],
@@ -779,10 +871,14 @@
           "return_date": "2026-10-10",
           "lowest_seen": 631.0,
           "median": 631.0,
-          "n_obs": 1,
+          "n_obs": 2,
           "sparkline": [
             {
               "t": "2026-07-09",
+              "p": 631.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 631.0
             }
           ],
@@ -801,7 +897,7 @@
           "return_date": "2026-11-10",
           "lowest_seen": 635.0,
           "median": 635.0,
-          "n_obs": 2,
+          "n_obs": 3,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -810,9 +906,35 @@
             {
               "t": "2026-07-09",
               "p": 635.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 635.0
             }
           ],
           "link": "https://www.aviasales.com/search/TLV0710LED10112"
+        },
+        {
+          "origin": "TLV",
+          "destination": "MSQ",
+          "source": "travelpayouts",
+          "basis": "per_adult",
+          "price": 675.0,
+          "currency": "USD",
+          "airline": "J2",
+          "transfers": 2,
+          "depart_date": "2026-09-30",
+          "return_date": "2026-11-29",
+          "lowest_seen": 675.0,
+          "median": 675.0,
+          "n_obs": 1,
+          "sparkline": [
+            {
+              "t": "2026-07-10",
+              "p": 675.0
+            }
+          ],
+          "link": "https://www.aviasales.com/search/TLV3009MSQ29112"
         },
         {
           "origin": "TLV",
@@ -827,7 +949,7 @@
           "return_date": "2026-09-01",
           "lowest_seen": 714.0,
           "median": 714.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -839,6 +961,10 @@
             },
             {
               "t": "2026-07-09",
+              "p": 714.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 714.0
             }
           ],
@@ -863,8 +989,8 @@
           "depart_date": "2026-12-09",
           "return_date": "2026-12-20",
           "lowest_seen": 1177.0,
-          "median": 1293.0,
-          "n_obs": 9,
+          "median": 1439.0,
+          "n_obs": 12,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -900,6 +1026,18 @@
             },
             {
               "t": "2026-07-09",
+              "p": 1531.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 1293.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 1439.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 1531.0
             }
           ],
@@ -917,8 +1055,8 @@
           "depart_date": "2026-12-10",
           "return_date": "2026-12-17",
           "lowest_seen": 1177.0,
-          "median": 1293.0,
-          "n_obs": 9,
+          "median": 1439.0,
+          "n_obs": 12,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -954,6 +1092,18 @@
             },
             {
               "t": "2026-07-09",
+              "p": 1531.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 1293.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 1439.0
+            },
+            {
+              "t": "2026-07-10",
               "p": 1531.0
             }
           ],
@@ -971,8 +1121,8 @@
           "depart_date": "2026-12-08",
           "return_date": "2026-12-20",
           "lowest_seen": 1177.0,
-          "median": 1293.0,
-          "n_obs": 9,
+          "median": 1439.0,
+          "n_obs": 12,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -1009,6 +1159,18 @@
             {
               "t": "2026-07-09",
               "p": 1531.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 1293.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 1439.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 1531.0
             }
           ],
           "link": "https://www.aviasales.com/search/TLV0812DPS20122"
@@ -1018,15 +1180,15 @@
           "destination": "DPS",
           "source": "serpapi",
           "basis": "family_total",
-          "price": 2940.0,
+          "price": 2938.0,
           "currency": "USD",
           "airline": "SWISS",
           "transfers": 2,
           "depart_date": "2026-12-11",
           "return_date": "2026-12-28",
-          "lowest_seen": 2940.0,
+          "lowest_seen": 2938.0,
           "median": 2957.0,
-          "n_obs": 3,
+          "n_obs": 4,
           "sparkline": [
             {
               "t": "2026-07-09",
@@ -1039,6 +1201,10 @@
             {
               "t": "2026-07-09",
               "p": 2940.0
+            },
+            {
+              "t": "2026-07-10",
+              "p": 2938.0
             }
           ],
           "link": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoeEgoyMDI2LTEyLTExagcIARIDVExWcgcIARIDRFBTGh4SCjIwMjYtMTItMjhqBwgBEgNEUFNyBwgBEgNUTFZAAUABQANIAXABmAEB&tfu=EgIIAQ"
